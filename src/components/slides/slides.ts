@@ -406,6 +406,21 @@ export class Slides extends Ion {
   }
   private _slidesPerView: number|string = 1;
 
+  
+ 
+  /**
+   * @input {boolean} showing dynamic Bullets on view incase of many Bullets. Default: `false`.
+   */
+  @Input()
+  get dynamicBullets() {
+    return this._dynamicBullets;
+  }
+  set dynamicBullets(val: boolean) {
+    this._dynamicBullets = isTrueProperty(val);
+  }
+  private _dynamicBullets:  boolean = false;
+  
+  
   /**
    * @input {boolean} Center a slide in the middle of the screen.
    */
